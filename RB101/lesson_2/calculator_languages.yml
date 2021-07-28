@@ -1,0 +1,44 @@
+en:
+  msg_welcome: "Welcome to Calculator! Enter your name:"
+  name_error: "Make sure to use a valid name."
+  hi_name: "Hi, "
+  add: "Adding"
+  sub: "Subtracting"
+  mult: "Multiplying"
+  div: "Dividing"
+  first_num: "What's the first number?"
+  sec_num: "What's the second number?"
+  num_error: "Hmm... that is not valid."
+  operator_error: "Must choose 1, 2, 3, or 4"
+  two_nums: "the two numbers..."
+  result: "The result is "
+  new_calc?: "Do you want to perform another calculation? (Y for again)"
+  goodbye: "Goodbye! :)"
+  operator_prompt: | 
+    What operation would you like to perform?
+    1) add
+    2) subtract
+    3) multiply
+    4) divide
+et:
+  msg_welcome: "Tere! Sisesta enda nimi:"
+  name_error: "Palun ära jäta seda lünka tühjaks"
+  hi_name: "Hei, "
+  add: "Liidan"
+  sub: "Lahutan"
+  mult: "Korrutan"
+  div: "Jagan"
+  first_num: "Mis on esimene number?"
+  sec_num: "Mis on teine number?"
+  num_error: "Hmm... see ei tundu õige."
+  operator_error: "Pead valima 1, 2, 3, or 4"
+  two_nums: "need kaks numbrit..."
+  result: "Vastus on "
+  new_calc?: "Kas sa tahad veel arvutada? (Y kui tahad)"
+  goodbye: "Headaega! :)"
+  operator_prompt: | 
+    Mis tehet sa tahad teha?
+    1) liitmine
+    2) lahutamine
+    3) korrutamine
+    4) jagamine
