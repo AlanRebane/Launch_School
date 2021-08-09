@@ -236,7 +236,7 @@ end
 # p word_sizes("What's up doc?") == { 6 => 1, 2 => 1, 4 => 1 }
 # p word_sizes('') == {}
 
-
+# 7. Word Sizes (part 2)
 def word_sizes2(sentence)
   occ_hash = Hash.new(0)
 
@@ -248,7 +248,67 @@ def word_sizes2(sentence)
   occ_hash
 end
 
-p word_sizes2('Four score and seven.') == { 3 => 1, 4 => 1, 5 => 2 }
-p word_sizes2('Hey diddle diddle, the cat and the fiddle!') == { 3 => 5, 6 => 3 }
-p word_sizes2("What's up doc?") == { 5 => 1, 2 => 1, 3 => 1 }
-p word_sizes2('') == {}
+# p word_sizes2('Four score and seven.') == { 3 => 1, 4 => 1, 5 => 2 }
+# p word_sizes2('Hey diddle diddle, the cat and the fiddle!') == { 3 => 5, 6 => 3 }
+# p word_sizes2("What's up doc?") == { 5 => 1, 2 => 1, 3 => 1 }
+# p word_sizes2('') == {}
+
+# 8. Alphabetical Numbers
+WORDS = %W{zero one two three four five six seven 
+           eight nine ten eleven twelve thirteen fourteen 
+           fifteen sixteen seventeen eighteen nineteen}
+NUMBERS = (0..19).to_a
+
+index = 0
+NUMS_WORDS_HASH = NUMBERS.each_with_object({}) do |i, hash|
+  hash[i] = WORDS[index]
+  index += 1
+end
+WORDS_NUMS_HASH = NUMS_WORDS_HASH.invert
+
+def alphabetic_number_sort(some_array)
+  array_with_words = some_array.map do |number|
+    number = NUMS_WORDS_HASH[number]
+  end
+  array_with_words.sort.map do |word|
+    word = WORDS_NUMS_HASH[word]
+  end
+end
+
+# p alphabetic_number_sort((0..19).to_a)
+
+# p alphabetic_number_sort((0..19).to_a) == [
+#   8, 18, 11, 15, 5, 4, 14, 9, 19, 1, 7, 17,
+#   6, 16, 10, 13, 3, 12, 2, 0
+# ]
+
+def alphabetic_number_sort_short(some_array)
+  some_array.sort_by { |number| WORDS[number]}
+end
+
+# 9. ddaaiillyy ddoouubbllee
+def crunch(some_string)
+  result = ''
+  some_string.each_char do |char|
+    result << char unless result[-1] == char
+  end
+  result
+end
+
+# p crunch('ddaaiillyy ddoouubbllee') == 'daily double'
+# p crunch('4444abcabccba') == '4abcabcba'
+# p crunch('ggggggggggggggg') == 'g'
+# p crunch('a') == 'a'
+# p crunch('') == ''
+
+# 10. Bannerizer
+def print_in_box(sentence)
+  box_length = sentence.size + 2
+  puts '+' + "-" * box_length + '+'
+  puts "|" + " " * box_length + '|'
+  puts "| " + sentence + " |"
+  puts "|" + " " * box_length + '|'
+  puts '+' + "-" * box_length + '+'
+end
+
+#print_in_box('To boldly go where no one has gone before.')
