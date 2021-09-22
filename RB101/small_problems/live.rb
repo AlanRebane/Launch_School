@@ -118,3 +118,18 @@ end
 # p max_rotation(105) == 15 # the leading zero gets dropped
 # p max_rotation(8_703_529_146) == 7_321_609_845
     
+# Problem: Select the element out of the array if its index is a fibonacci number.
+def add_to_fibonacci_array(arr)
+  arr << arr[-1] + arr[-2]
+end
+
+def fibo_index(arr)
+  fibo_array = [1, 1]
+  index = -1
+  arr.select do |_|
+    index += 1
+    add_to_fibonacci_array(fibo_array) if index > fibo_array.last
+    arr[-1] == number
+  end
+end
+
