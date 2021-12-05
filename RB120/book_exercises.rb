@@ -103,9 +103,11 @@ class Student
   end
 
   private
+  
+  attr_reader :grade
 
   def grade(object)
-    @grade
+    object.grade
   end
 end
 
